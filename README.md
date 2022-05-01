@@ -1,132 +1,35 @@
-# ec530_proj_2
+# Chum Sim Backend
 
-## Branching Strategy
+<p align="center"><img src="src/frontend/images/favicon.ico"></p>
 
-All branches created should correspond to and fulfill the requirements of a specific Github Issue. 
-Issues should identify a feature to add or a bug to be resolved.
+## Description
 
-Before merging to main, a branch must include the implementation of the desired feature as well as a corresponding test.
-If a branch includes modifications to code in the `/src` directory, these changes should be documented in `changelog.md`
+[![GitHub Issues](https://img.shields.io/github/issues/MichaelJAliberti/chum_sim_backend.svg)](https://github.com/MichaelJAliberti/chum_sim_backend/issues)
+[![License](https://img.shields.io/github/license/MichaelJAliberti/chum_sim_backend)](https://opensource.org/licenses/MIT)
 
----
+Chum Sim is a Shadowrun management tool inspired by [Chummer 5](https://github.com/chummer5a/chummer5a).
 
-## API Schema
+Chum Sim allows users to create new characters, modify existing characters, and run simulations between characters in order to asses the quality of combat encounters. Chum Sim also allows users to make dice rolls digitally, streamlining gameplay at the table.
 
-### `/chats`:
+This repository contains the code for Chum Sim's backend api, which is intended to run on heroku. The frontend code may be found [here](https://github.com/MichaelJAliberti/chum_sim).
 
-```
-{
-    "<id>": {
-        "users": [str],
-        "messages": [
-            {
-                "timestamp": datetime.datetime,
-                "user": str,
-                "payload": str,
-            }
-        ]
-    }
-}
-```
+## Installation
 
-### `/chats/<id>`:
+Before starting, make sure you have [Git](https://git-scm.com/), [Python](https://www.python.org/), and [Pipenv](https://pypi.org/project/pipenv/) installed.
+
+Then, run the followin commands in your terminal:
 
 ```
-{
-    "users": [str],
-    "messages": [
-        {
-            "timestamp": datetime.datetime,
-            "user": str,
-            "payload": str,
-        }
-    ]
-}
+git clone https://github.com/MichaelJAliberti/chum_sim_backend.git
+cd chum_sim_backend
+pipenv install
 ```
 
-### `/chats/<id>/users`:
+## Running
+
+Once installation is complete, start the program by running
 
 ```
-[str]
-```
-
-### `/chats/<id>/messages`:
-
-```
-[
-    {
-        "timestamp": datetime.datetime,
-        "user": str,
-        "payload": str,
-    }
-]
-```
-
-### `/devices`:
-
-```
-{
-    "<id>": {
-        "timestamp": datetime.datetime,
-        "mac": str,
-        "value": int,
-    }
-}
-```
-
-### `/devices/<id>`:
-
-```
-{
-    "timestamp": datetime.datetime,
-    "mac": str,
-    "value": int,
-}
-```
-
-### `/users`:
-
-```
-{
-    "<id>": {
-        "info": {
-            "full_name": str,
-            "email": str,
-            "dob": str,
-            "gender": str,
-        },
-        "chats": [str]
-    }
-}
-```
-
-### `/users/<id>`:
-
-```
-{
-    "info": {
-        "full_name": str,
-        "email": str,
-        "dob": str,
-        "gender": str,
-    },
-    "chats": [str]
-}
-```
-
-### `/users/<id>/info`:
-
-```
-{
-    "full_name": str,
-    "email": str,
-    "dob": str,
-    "gender": str,
-}
-```
-
-### `/users/<id>/chats`:
-
-```
-[str]
+pipenv shell
+py main.py
 ```

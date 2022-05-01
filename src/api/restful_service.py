@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 
-from src.data_management.resource_factory import ResourceFactory
+from src.api.resource_factory import ResourceFactory
 
 
 class RESTService:

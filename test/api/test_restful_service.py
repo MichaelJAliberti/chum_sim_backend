@@ -1,7 +1,19 @@
 import pytest
 
-from src.data_management.restful_service import RESTService
-from src.data_management.template import DATA_TEMPLATE
+from src.api.restful_service import RESTService
+from template import DATA_TEMPLATE
+
+
+def perform_curl_op(client, operation, path, param):
+    """Perfroms requested curl operation on resource indicated by path"""
+    if operation == "GET":
+        return client.get(path)
+    elif operation == "POST":
+        return client.post(path, json=param)
+    elif operation == "PUT":
+        return client.put(path, json=param)
+    else:
+        return client.delete(path)
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -15,18 +27,6 @@ def app():
 @pytest.fixture(scope="module", autouse=True)
 def client(app):
     return app.test_client()
-
-
-def perform_curl_op(client, operation, path, param):
-    """Perfroms requested curl operation on resource indicated by path"""
-    if operation == "GET":
-        return client.get(path)
-    elif operation == "POST":
-        return client.post(path, json=param)
-    elif operation == "PUT":
-        return client.put(path, json=param)
-    else:
-        return client.delete(path)
 
 
 @pytest.mark.parametrize(
