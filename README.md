@@ -1,9 +1,9 @@
 # Chum Sim Backend
 
-## Description
-
 [![GitHub Issues](https://img.shields.io/github/issues/MichaelJAliberti/chum_sim_backend.svg)](https://github.com/MichaelJAliberti/chum_sim_backend/issues)
 [![License](https://img.shields.io/github/license/MichaelJAliberti/chum_sim_backend)](https://opensource.org/licenses/MIT)
+
+## Description
 
 Chum Sim is a Shadowrun management tool inspired by [Chummer 5](https://github.com/chummer5a/chummer5a).
 
