@@ -1,3 +1,9 @@
+# python
 docs/build
 __pycache__/
+
+# ide
 .vscode/
+
+# testing
+scratch.py

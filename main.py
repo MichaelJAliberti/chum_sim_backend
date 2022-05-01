@@ -1,5 +1,5 @@
-from src.data_management.restful_service import RESTService
-from src.data_management.template import DATA_TEMPLATE
+from src.api.restful_service import RESTService
+from template import DATA_TEMPLATE
 
 
 service = RESTService.build_from_templates(DATA_TEMPLATE)

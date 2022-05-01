@@ -1,10 +1,10 @@
 from flask_restful import reqparse, Resource
 
-from src.data_management.error_handling import (
+from src.api.error_handling import (
     abort_if_does_not_exist,
     abort_if_operation_unsupported,
 )
-from src.utils.class_utils import copy_class_def
+from src.api.utils import copy_class_def
 
 
 class ResourceFactory:
