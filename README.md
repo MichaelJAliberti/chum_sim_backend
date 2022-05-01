@@ -1,7 +1,5 @@
 # Chum Sim Backend
 
-<p align="center"><img src="src/frontend/images/favicon.ico"></p>
-
 ## Description
 
 [![GitHub Issues](https://img.shields.io/github/issues/MichaelJAliberti/chum_sim_backend.svg)](https://github.com/MichaelJAliberti/chum_sim_backend/issues)
